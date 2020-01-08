@@ -1,0 +1,12 @@
+.pin-card {
+    box-shadow: 5px 5px 5px black;
+    background-color: rgb(56, 56, 56);
+    color: white;
+    border-radius: 15px;
+    transform: rotate(5deg);
+
+    img {
+      transform: rotate(-5deg);
+      box-shadow: 5px 5px 5px black;
+    }
+}
