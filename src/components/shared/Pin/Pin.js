@@ -20,10 +20,10 @@ class Pin extends React.Component {
   render() {
     const { pin } = this.props;
     return (
-      <div class="card pin-card col-3">
-        <img src={pin.imageUrl} class="card-img-top" alt={pin.title}/>
-        <div class="card-body">
-          <h5 class="card-title">{pin.title}</h5>
+      <div className="card pin-card col-3">
+        <img src={pin.imageUrl} className="card-img-top" alt={pin.title}/>
+        <div className="card-body">
+          <h5 className="card-title">{pin.title}</h5>
           <button className="btn btn-danger" onClick={this.deletePinEvent}>Delete Pin</button>
         </div>
       </div>
