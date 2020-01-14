@@ -11,7 +11,7 @@ import 'firebase/auth';
 import Auth from '../components/pages/Auth/Auth';
 import Home from '../components/pages/Home/Home';
 import SingleBoard from '../components/pages/SingleBoard/SingleBoard';
-import NewBoard from '../components/pages/NewBoard/NewBoard';
+import BoardForm from '../components/pages/BoardForm/BoardForm';
 import MyNavbar from '../components/shared/MyNavbar/MyNavbar';
 
 import firebaseConnection from '../helpers/data/connection';
@@ -57,7 +57,7 @@ class App extends React.Component {
           <MyNavbar authed={authed} />
           <Switch>
             <PrivateRoute path="/" exact component={Home} authed={authed} />
-            <PrivateRoute path="/board/new" exact component={NewBoard} authed={authed} />
+            <PrivateRoute path="/board/new" exact component={BoardForm} authed={authed} />
             <PublicRoute path="/auth" exact component={Auth} authed={authed} />
             <PrivateRoute path="/board/:boardId" exact component={SingleBoard} authed={authed} />
           </Switch>
