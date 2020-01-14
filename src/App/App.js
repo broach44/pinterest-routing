@@ -10,7 +10,7 @@ import 'firebase/auth';
 
 import Auth from '../components/pages/Auth/Auth';
 import Home from '../components/pages/Home/Home';
-import PinForm fro '../components/pages/PinForm/PinForm';
+import PinForm from '../components/pages/PinForm/PinForm';
 import SingleBoard from '../components/pages/SingleBoard/SingleBoard';
 import BoardForm from '../components/pages/BoardForm/BoardForm';
 import MyNavbar from '../components/shared/MyNavbar/MyNavbar';
