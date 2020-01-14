@@ -21,6 +21,9 @@ class BoardForm extends React.Component {
     }
   }
 
+  componentWillUnmount() {
+  }
+
   nameChange = (e) => {
     e.preventDefault();
     this.setState({ boardName: e.target.value });
@@ -31,8 +34,17 @@ class BoardForm extends React.Component {
     this.setState({ boardDescription: e.target.value });
   }
 
-  setBoardToEdit = () => {
-
+  editBoardEvent = (e) => {
+    e.preventDefault();
+    const { boardId } = this.props.match.params;
+    const editBoard = {
+      name: this.state.boardName,
+      description: this.state.boardDescription,
+      uid: authData.getUid(),
+    };
+    boardData.updateBoard(boardId, editBoard)
+      .then(() => this.props.history.push('/'))
+      .catch((err) => console.error('error from edit board', err));
   }
 
   saveBoardEvent = (e) => {
@@ -49,6 +61,7 @@ class BoardForm extends React.Component {
 
   render() {
     const { boardName, boardDescription } = this.state;
+    const { boardId } = this.props.match.params;
     return (
       <div className="BoardForm">
         <form>
@@ -74,7 +87,10 @@ class BoardForm extends React.Component {
               onChange={this.descriptionChange}
             />
           </div>
-          <button className="btn btn-secondary" onClick={this.saveBoardEvent}>Save Changes</button>
+          {
+            (boardId) ? <button className="btn btn-secondary" onClick={this.editBoardEvent}>Edit Board</button>
+              : <button className="btn btn-secondary" onClick={this.saveBoardEvent}>Save Board</button>
+          }
         </form>
       </div>
     );
