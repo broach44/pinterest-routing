@@ -24,6 +24,7 @@ class Board extends React.Component {
       <div className="card col-4 board-card">
         <div className="card-body">
           <button className="btn btn-danger delete-btn" onClick={this.deleteBoardEvent}>X</button>
+          <Link className="btn btn-secondary" to={`/board/${board.id}/edit`}>Edit</Link>
           <h5 className="card-title">{board.name}</h5>
           <p className="card-text">{board.description}</p>
           <Link className="btn btn-secondary" to={`/board/${board.id}`}>View Board</Link>
